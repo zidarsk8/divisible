@@ -20,8 +20,8 @@
 	</div>
 	<nav>
 	  <ul>
-		  <li id="k1"><a href="#" >more</a></li>
-	      <li id="k2"><a href="#">less</a></li>
+	      <li id="k2"><a href="#">down</a></li>
+		  <li id="k1"><a href="#" >up</a></li>
 	  </ul>
     	</nav>
     </header>
@@ -30,34 +30,29 @@
     <div id="devs"></div>
     </section>
     
-    <footer id="contentinfo" class="body">
-	footer
-    </footer>
 
     <script src="js/lib/jquery-1.7.min.js"></script>
   
 	  <script>
 		  $(document).ready(function(){
-			var start = 0;
+			var start = 35;
 
 
 			$("#k2").click(function(){
-				console.log("k2");
 				start--;
 				writeStuff();
 			});
 
 
 			$("#k1").click(function(){
-				console.log("k1");
 				start++;
 				writeStuff();
 			});
 
 			function writeStuff(){
 				var h = "";
-				for (var i=0; i< 40 ; i++){
-					h+= ((i+start)*3+ (i+start == 42))+"<br />";
+				for (var i=0; i< 10 ; i++){
+					h+= (i+start)+" * 3  =  <h3 style='display:inline'>"+((i+start)*3+ (i+start == 42))+"</h3><br />";
 				}
 				$("#devs").html(h);
 
