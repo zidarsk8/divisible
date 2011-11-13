@@ -17,30 +17,56 @@
 <body>
     <header id="banner">
 	<div class="body">
-	aaaa</div>
+	</div>
 	<nav>
 	  <ul>
-	      <li id="k1" class="active"><a href="#" >Simple Turing</a></li>
-	      <li id="k2"><a href="#">More tracks</a></li>
-	      <li id="k3"><a href="#">More heads</a></li>
-	      <li id="k3"><a href="#">More commands</a></li>
+		  <li id="k1"><a href="#" >more</a></li>
+	      <li id="k2"><a href="#">less</a></li>
 	  </ul>
     	</nav>
     </header>
     
     <section class="body">
-    	TODO: everything. and make the nav buttons into pretty pictures
+    <div id="devs"></div>
     </section>
     
     <footer id="contentinfo" class="body">
 	footer
     </footer>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js"><\/script>')</script>
-  <!-- scripts concatenated and minified via ant build script-->
+    <script src="js/lib/jquery-1.7.min.js"></script>
+  
+	  <script>
+		  $(document).ready(function(){
+			var start = 0;
 
-  <!-- end scripts-->
+
+			$("#k2").click(function(){
+				console.log("k2");
+				start--;
+				writeStuff();
+			});
+
+
+			$("#k1").click(function(){
+				console.log("k1");
+				start++;
+				writeStuff();
+			});
+
+			function writeStuff(){
+				var h = "";
+				for (var i=0; i< 40 ; i++){
+					h+= ((i+start)*3+ (i+start == 42))+"<br />";
+				}
+				$("#devs").html(h);
+
+			}
+
+			  writeStuff();
+			  console.log("aaa");
+		  });
+	  </script>
 
 </body>
 </html>
